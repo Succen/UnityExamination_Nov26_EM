@@ -10,7 +10,14 @@ public class SceneChangeHandler : MonoBehaviour
     public void ChangeScene()
     {
         // Load the scene named "NewScene"
-        SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Single);
+        if (SceneManager.GetActiveScene().name == "Lore")
+        {
+            SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Single);
+        }
+        else if (SceneManager.GetActiveScene().name == "Level1")
+            {
+            SceneManager.LoadSceneAsync("Level2", LoadSceneMode.Single);
+            }
     }
 
     public void QuitGame()
